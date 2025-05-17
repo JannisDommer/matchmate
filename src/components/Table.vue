@@ -16,7 +16,7 @@
           class="px-4 py-2"
         >
           <slot name="cell" :row="row" :column="col">
-            {{ row[col] }}
+            {{ row }}
           </slot>
         </td>
       </tr>
@@ -25,17 +25,11 @@
   </div>
 </template>
 
-<script setup>
-defineProps({
-  columns: {
-    type: Array,
-    required: true,
-  },
-  rows: {
-    type: Array,
-    required: true,
-  },
-})
+<script setup lang="ts">
+defineProps<{
+  columns: string[]
+  rows: any[]
+}>();
 </script>
 
 

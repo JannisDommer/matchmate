@@ -1,5 +1,5 @@
 <template>
-  <Table :columns="['Name']" :rows="data">
+  <Table :columns="[group.name]" :rows="group.teams">
     <template #header="{ column }">
       <span class="font-bold">{{ column }}</span>
     </template>
@@ -9,19 +9,20 @@
         <button @click="edit(row)" class="text-blue-600 hover:underline">Edit</button>
       </template>
       <template v-else>
-        {{ row[column] }}
+        {{row?.name}}
       </template>
     </template>
   </Table>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import Table from './Table.vue'
+import { Group } from '@/types/tournamentTypes.ts'
 
-const data = [
-  { Name: 'Alice' },
-  { Name: 'Bob'},
-]
+defineProps<{
+  group: Group
+}>();
+
 
 function edit(row) {
   alert('Editing: ' + JSON.stringify(row))
