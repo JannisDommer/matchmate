@@ -1,7 +1,5 @@
 <template>
-  <GroupTable v-for="group in groups" :group="group">
-
-  </GroupTable>
+  <GroupTable v-for="group in groups" :group="group"/>
 </template>
 
 <script setup lang="ts">

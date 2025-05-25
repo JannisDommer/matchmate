@@ -1,5 +1,5 @@
 <template>
-  <Table :columns="[group.name]" :rows="group.teams">
+  <MatchMateTable :columns="[group.name]" :rows="group.teams">
     <template #header="{ column }">
       <span class="font-bold">{{ column }}</span>
     </template>
@@ -12,11 +12,11 @@
         {{row?.name}}
       </template>
     </template>
-  </Table>
+  </MatchMateTable>
 </template>
 
 <script setup lang="ts">
-import Table from './Table.vue'
+import MatchMateTable from './MatchMateTable.vue'
 import { Group } from '@/types/tournamentTypes.ts'
 
 defineProps<{

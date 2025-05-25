@@ -17,3 +17,15 @@ export interface Team {
 export interface Participant {
   name: string,
 }
+
+export interface Match {
+  group: string;
+  homeTeam: Team;
+  awayTeam: Team;
+  scoreHome: number;
+  scoreAway: number;
+}
+
+export interface ScheduledMatches extends Match {
+  time: string;
+}
