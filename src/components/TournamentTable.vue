@@ -1,12 +1,18 @@
 <template>
-  <Table :columns="['Game', 'Result']" :rows="defineGames">
+  <Table :columns="['Time','Group', 'Game', 'Result']" :rows="defineGames">
     <template #header="{ column }">
       <span class="font-bold">{{ column }}</span>
     </template>
 
     <template #cell="{ row, column }">
-      <template v-if="column === 'Game'">
-        <span class="font-bold">{{ row?.homeTeam }} vs {{ row?.awayTeam }}</span>
+      <template v-if="column === 'Time'">
+        <span class="font-bold">{{ row?.time }}</span>
+      </template>
+      <template v-else-if="column === 'Group'">
+        <span class="font-bold">{{ row?.group }}</span>
+      </template>
+      <template v-else-if="column === 'Game'">
+        <span class="font-bold">{{ row?.homeTeam.name }} vs {{ row?.awayTeam.name }}</span>
       </template>
       <template v-else>
         <span class="font-bold">{{ row?.scoreHome }} : {{ row?.scoreAway }}</span>
@@ -18,16 +24,21 @@
 <script setup lang="ts">
 import Table from "./Table.vue";
 import {computed} from "vue";
+import type {Group} from "@/types/tournamentTypes.ts";
 
 const props = defineProps<{
   groups: Group[]
 }>()
 
-type Game = {
-  homeTeam: string;
-  awayTeam: string;
-  scoreHome: number;
-  scoreAway: number;
+const startDate = new Date(2025, 6,3, 12, 0, 0);
+const matchTimeInMinutes = 15;
+
+function addMinutes(date: Date, minutes: number): Date {
+  return new Date(date.getTime() + minutes * 60000);
+}
+
+function formatDate(date: Date): string {
+  return date.toLocaleTimeString([], {hour: '2-digit', minute: '2-digit'});
 }
 
 function matchesPerGroup(group: Group) {
@@ -36,35 +47,32 @@ function matchesPerGroup(group: Group) {
   for (let team = 0; team < teams.length; team++) {
     for (let opponentTeam = team+1; opponentTeam < teams.length; opponentTeam++) {
       accumulator.push({
-        homeTeam: teams[team].name,
-        awayTeam: teams[opponentTeam].name,
+        group: group.name,
+        homeTeam: teams[team],
+        awayTeam: teams[opponentTeam],
         scoreHome: Math.floor(Math.random() * 5),
         scoreAway: Math.floor(Math.random() * 5)
       })
     }
   }
   return accumulator;
-  //return teams.flatMap(team =>
-  //  teams.filter(opponent => opponent !== team).map(opponent => {
-  //    console.log(opponent);
-  //    return {
-  //      homeTeam: team.name,
-  //      awayTeam: opponent.name,
-  //      scoreHome: Math.floor(Math.random() * 5),
-  //      scoreAway: Math.floor(Math.random() * 5)
-  //    }
-  //  })
-  //);
 }
 
 const defineGames = computed(() => {
-  console.log(props.groups);
   if (!props.groups) {
     return [];
   }
-  return props.groups.flatMap(group =>
+  let matches = props.groups.flatMap(group =>
     matchesPerGroup(group)
   );
+  matches = matches.map((match, index) => {
+    let offsetSinceStart = index * matchTimeInMinutes;
+    return {
+      ...match,
+      time: formatDate(addMinutes(startDate, offsetSinceStart)),
+    }
+  });
+  return matches;
 })
 
 </script>
