@@ -103,18 +103,24 @@ function buildBracketTree(firstRound: koMatch[]): BracketMatch[][] {
   flex-direction: column;
   align-items: flex-start;
   margin-top: 2rem;
+  min-height: 100vh;
+  height: 100%;
 }
 .bracket-tree {
   display: flex;
   flex-direction: row;
   gap: 2rem;
-  align-items: flex-start;
+  align-items: stretch; /* Stretch columns to same height */
+  width: 100%;
 }
 .bracket-round {
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
   align-items: center;
+  justify-content: center;
+  flex: 1 1 0;
+  height: 100%;
 }
 .match-box {
   border: 2px solid #1976d2;
