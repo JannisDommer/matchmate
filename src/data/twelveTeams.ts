@@ -558,3 +558,35 @@ export const twelveTeamsMatches: Match[] = [
     scoreAway: 3
   }
 ]
+
+
+export const twelveTeamsKoTree = [
+  {
+    "team1": "Team A1",
+    "team2": "Team B1",
+    "score1": 0,
+    "score2": 0,
+    "winner": null
+  },
+  {
+    "team1": "Team C1",
+    "team2": "Team A2",
+    "score1": 0,
+    "score2": 0,
+    "winner": null
+  },
+  {
+    "team1": "Team B2",
+    "team2": "Team C4",
+    "score1": 0,
+    "score2": 0,
+    "winner": null
+  },
+  {
+    "team1": "Team A3",
+    "team2": "Team B4",
+    "score1": 0,
+    "score2": 0,
+    "winner": null
+  }
+]

@@ -2,5 +2,5 @@
 </script>
 
 <template>
-  <h2>Welcome to MatchMate</h2>
+  <h2>10. WKT Boule Turnier</h2>
 </template>

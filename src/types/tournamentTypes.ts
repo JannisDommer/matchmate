@@ -1,3 +1,5 @@
+import type {TeamRanking} from "@/util/gameEvaluations.ts";
+
 export interface TournamentDefinition {
   name: string,
   groups: Group[],
@@ -29,3 +31,10 @@ export interface Match {
 export interface ScheduledMatches extends Match {
   time: string;
 }
+
+export type koMatch = { team1: string, team2: string, score1: number, score2: number, winner: string | null };
+
+export interface groupPhaseResults {
+  name: string;
+  rankings: TeamRanking[];
+};

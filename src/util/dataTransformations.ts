@@ -1,4 +1,9 @@
-import type {Group, Match, ScheduledMatches} from "@/types/tournamentTypes.ts";
+import type {
+  Group, groupPhaseResults, koMatch,
+  Match,
+  ScheduledMatches,
+  TournamentDefinition
+} from "@/types/tournamentTypes.ts";
 
 function addMinutes(date: Date, minutes: number): Date {
   return new Date(date.getTime() + minutes * 60000);
@@ -25,7 +30,7 @@ function matchesPerGroup(group: Group) {
   return accumulator;
 }
 
-export function getMatches(groups: Group[]) {
+export function getGroupPhaseMatches(groups: Group[]) {
   return groups.flatMap(group =>
     matchesPerGroup(group)
   );
@@ -39,4 +44,31 @@ export function scheduleMatches(matches: Match[], startDate: Date, matchTimeInMi
       time: formatDate(addMinutes(startDate, offsetSinceStart)),
     }
   });
+}
+
+
+
+export function getTeamsPlayingInBracket(tournamentData: TournamentDefinition, groupResults: groupPhaseResults[]) {
+  const numberOfBrackets = tournamentData.bracketsAfterGroupPhase;
+  console.log(numberOfBrackets)
+  const teamsRequiredToFillBrackets = Math.pow(2, numberOfBrackets);
+  let teamsRequiredDivisableByNumberOfGroups = teamsRequiredToFillBrackets % tournamentData.groups.length === 0;
+  let firstRoundMatches: koMatch[] = [];
+  for (let i = 0; i < teamsRequiredToFillBrackets; i += 2) {
+    let groupToTakeFrom = i % tournamentData.groups.length;
+    let positionInGroup = Math.floor(i / tournamentData.groups.length);
+    const team1 = groupResults[groupToTakeFrom].rankings[positionInGroup].name;
+    groupToTakeFrom = (i + 1) % tournamentData.groups.length;
+    positionInGroup = Math.floor((i + 1) / tournamentData.groups.length);
+    const team2 = groupResults[groupToTakeFrom].rankings[positionInGroup].name;
+    firstRoundMatches[Math.floor(i / 2)] = {
+      team1,
+      team2,
+      score1: 0,
+      score2: 0,
+      winner: null
+    };
+  }
+  console.log(firstRoundMatches);
+  return firstRoundMatches;
 }
