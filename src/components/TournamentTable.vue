@@ -6,16 +6,16 @@
 
     <template #cell="{ row, column }">
       <template v-if="column === 'Time'">
-        <span class="font-bold">{{ row?.time }}</span>
+        <span class="table-cell">{{ row?.time }}</span>
       </template>
       <template v-else-if="column === 'Group'">
-        <span class="font-bold">{{ row?.group }}</span>
+        <span class="table-cell">{{ row?.group }}</span>
       </template>
       <template v-else-if="column === 'Game'">
-        <span class="font-bold">{{ row?.homeTeam.name }} vs {{ row?.awayTeam.name }}</span>
+        <span class="table-cell">{{ row?.homeTeam.name }} vs {{ row?.awayTeam.name }}</span>
       </template>
       <template v-else>
-        <span class="font-bold">{{ row?.scoreHome }} : {{ row?.scoreAway }}</span>
+        <span class="table-cell">{{ row?.scoreHome }} : {{ row?.scoreAway }}</span>
       </template>
     </template>
   </MatchMateTable>
@@ -45,5 +45,13 @@ const defineGames = computed(() => {
 </script>
 
 <style scoped>
+.font-bold {
+  font-weight: bold;
+  font-size: 20pt;
+  color: #1976d2;
+}
 
+.table-cell {
+  padding: 0 2rem 0;
+}
 </style>

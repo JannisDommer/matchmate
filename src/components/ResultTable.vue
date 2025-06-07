@@ -1,10 +1,10 @@
 <template>
   <MatchMateTable :columns="columns" :rows="rows">
     <template #header="{ column }">
-      {{ column }}
+      <span class="table-cell">{{column}}</span>
     </template>
     <template #cell="{ row, column }">
-      {{ row[columnKey(column)] }}
+      <span>{{ row[columnKey(column)] }}</span>
     </template>
   </MatchMateTable>
 </template>
@@ -31,38 +31,43 @@ const props = defineProps<{
 }>();
 
 const columns = [
-  "Rank",
+  "Rang",
   "Team",
-  "Played",
-  "Won",
-  "Drawn",
-  "Lost",
-  "Goals For",
-  "Goals Against",
-  "Goal Difference",
-  "Points"
+  "Gespielt",
+  "Gewo.",
+  "Unent.",
+  "Verl.",
+  "Tore+",
+  "Tore-",
+  "Diff.",
+  "Punkte"
 ];
 
 const columnMap: Record<string, keyof TeamRanking> = {
-  "Rank": "rank",
+  "Rang": "rank",
   "Team": "name",
-  "Played": "played",
-  "Won": "won",
-  "Drawn": "drawn",
-  "Lost": "lost",
-  "Goals For": "goalsFor",
-  "Goals Against": "goalsAgainst",
-  "Goals Difference": "goalDifference",
-  "Points": "points"
+  "Gespielt": "played",
+  "Gewo.": "won",
+  "Unent.": "drawn",
+  "Verl.": "lost",
+  "Tore+": "goalsFor",
+  "Tore-": "goalsAgainst",
+  "Diff.": "goalDifference",
+  "Punkte": "points"
 };
 
 function columnKey(col: string) {
   return columnMap[col];
 }
 
-const rows = computed(() => props.groupRankings);
+const rows = computed(() => {
+  console.log(props.groupRankings);
+  return props.groupRankings
+});
 </script>
 
 <style scoped>
-
+.table-cell {
+  padding: 0 10px 0;
+}
 </style>

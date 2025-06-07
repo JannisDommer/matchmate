@@ -1,30 +1,29 @@
 <template>
   <MatchMateTable :columns="[group.name]" :rows="group.teams">
     <template #header="{ column }">
-      <span class="font-bold">{{ column }}</span>
+      <span class="font-bold pt-4 pb-3">{{ column }}</span>
     </template>
 
-    <template #cell="{ row, column }">
-      <template v-if="column === 'Actions'">
-        <button @click="edit(row)" class="text-blue-600 hover:underline">Edit</button>
-      </template>
-      <template v-else>
-        {{row?.name}}
-      </template>
+    <template #cell="{ row }">
+      {{row.name}}
     </template>
   </MatchMateTable>
 </template>
 
 <script setup lang="ts">
 import MatchMateTable from './MatchMateTable.vue'
-import { Group } from '@/types/tournamentTypes.ts'
+import {type Group } from '@/types/tournamentTypes.ts'
 
 defineProps<{
   group: Group
 }>();
 
-
-function edit(row) {
-  alert('Editing: ' + JSON.stringify(row))
-}
 </script>
+
+<style scoped>
+.font-bold {
+  font-weight: bold;
+  font-size: 20pt;
+  color: #1976d2;
+}
+</style>

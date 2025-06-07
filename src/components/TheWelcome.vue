@@ -2,5 +2,5 @@
 </script>
 
 <template>
-  <h2>10. WKT Boule Turnier</h2>
+  <h1>10. WKT Boule Turnier</h1>
 </template>

@@ -13,7 +13,7 @@
         <td
           v-for="(col, colIndex) in columns"
           :key="'cell-' + rowIndex + '-' + colIndex"
-          class="px-4 py-2"
+          class="px-4 py-2 text-center"
         >
           <slot name="cell" :row="row" :column="col">
             {{ row }}
@@ -34,5 +34,7 @@ defineProps<{
 
 
 <style scoped>
-
+.text-center {
+  text-align: center;
+}
 </style>

@@ -1,6 +1,9 @@
 <template>
   <div class="centered-container">
-    <ResultTable v-for="group in groups" :groupRankings="calculateGroupRankings(matches, group.name)"/>
+    <div v-for="group in groups">
+      <h2 class="group-header">{{ group.name }}</h2>
+      <ResultTable :groupRankings="calculateGroupRankings(matches, group.name)"/>
+    </div>
   </div>
 </template>
 
@@ -21,5 +24,11 @@ const matches = twelveTeamsMatches;
   align-items: center;
   justify-content: center;
   min-height: 80vh;
+}
+
+.group-header {
+  font-weight: bold;
+  color: #1976d2;
+  margin-top: 1rem;
 }
 </style>
