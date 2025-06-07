@@ -12,6 +12,7 @@ import { RouterLink, RouterView } from 'vue-router'
         <RouterLink to="/groups">Groups</RouterLink>
         <RouterLink to="/tournaments">Tournaments</RouterLink>
         <RouterLink to="/results">Results</RouterLink>
+        <RouterLink to="/bracket">Bracket</RouterLink>
       </nav>
     </div>
   </header>
