@@ -1,5 +1,7 @@
 <template>
-  <ResultTable v-for="group in groups" :groupRankings="calculateGroupRankings(matches, group.name)"/>
+  <div class="centered-container">
+    <ResultTable v-for="group in groups" :groupRankings="calculateGroupRankings(matches, group.name)"/>
+  </div>
 </template>
 
 
@@ -13,5 +15,11 @@ const matches = twelveTeamsMatches;
 </script>
 
 <style scoped>
-
+.centered-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 80vh;
+}
 </style>
