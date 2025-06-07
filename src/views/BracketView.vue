@@ -29,7 +29,12 @@
 </template>
 
 <script setup lang="ts">
-import {twelveTeams, twelveTeamsKoTree, twelveTeamsMatches} from "@/data/twelveTeams.ts";
+import {
+  twelveTeams,
+  twelveTeamsKoTree,
+  twelveTeamsKoTreeFinals,
+  twelveTeamsMatches
+} from "@/data/twelveTeams.ts";
 import {calculateGroupRankings, type TeamRanking} from "@/util/gameEvaluations.ts";
 import {ref} from "vue";
 import {getTeamsPlayingInBracket} from "@/util/dataTransformations.ts";
@@ -45,7 +50,9 @@ const groupResults: groupPhaseResults[] = groups.map(group => ({
 
 // const firstRoundMatches = ref(getTeamsPlayingInBracket(twelveTeams, groupResults));
 const firstRoundMatches = twelveTeamsKoTree;
-const wholeTournamentTree = ref(buildBracketTree(firstRoundMatches));
+//const wholeTournamentTree = ref(buildBracketTree(firstRoundMatches));
+const wholeTournamentTree = twelveTeamsKoTreeFinals;
+
 
 interface BracketMatch extends koMatch {
   round: number;
@@ -85,6 +92,7 @@ function buildBracketTree(firstRound: koMatch[]): BracketMatch[][] {
     prevRound = nextRound;
     roundNum++;
   }
+  console.log(rounds)
   return rounds;
 }
 </script>
