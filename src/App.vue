@@ -8,10 +8,10 @@ import { RouterLink, RouterView } from 'vue-router'
 
     <div class="wrapper">
       <nav>
-        <RouterLink to="/groups">Groups</RouterLink>
-        <RouterLink to="/tournaments">Tournaments</RouterLink>
-        <RouterLink to="/results">Results</RouterLink>
-        <RouterLink to="/bracket">Bracket</RouterLink>
+        <RouterLink to="/groups">Gruppen</RouterLink>
+        <RouterLink to="/tournaments">Gruppenphase</RouterLink>
+        <RouterLink to="/results">Ergebnisse</RouterLink>
+        <RouterLink to="/bracket">K.O. Phase</RouterLink>
       </nav>
     </div>
   </header>
@@ -66,7 +66,7 @@ nav a:first-of-type {
   }
 
   .logo {
-    margin: 0 2rem 0 0;
+    margin: 0;
   }
 
   header .wrapper {
@@ -77,7 +77,6 @@ nav a:first-of-type {
 
   nav {
     text-align: left;
-    margin-left: -1rem;
     font-size: 1rem;
 
     padding: 1rem 0;
