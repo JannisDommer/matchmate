@@ -1,7 +1,7 @@
 <template>
   <MatchMateTable :columns="['Time','Group', 'Game', 'Result']" :rows="defineGames">
     <template #header="{ column }">
-      <span class="font-bold">{{ column }}</span>
+      <span class="table-cell">{{ column }}</span>
     </template>
 
     <template #cell="{ row, column }">
