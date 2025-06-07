@@ -68,6 +68,6 @@ const rows = computed(() => {
 
 <style scoped>
 .table-cell {
-  padding: 0 10px 0;
+  margin: 0 10px 0;
 }
 </style>

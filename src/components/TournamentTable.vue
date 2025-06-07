@@ -1,21 +1,21 @@
 <template>
   <MatchMateTable :columns="['Time','Group', 'Game', 'Result']" :rows="defineGames">
     <template #header="{ column }">
-      <span class="table-cell">{{ column }}</span>
+      <div class="table-cell font-bold">{{ column }}</div>
     </template>
 
     <template #cell="{ row, column }">
       <template v-if="column === 'Time'">
-        <span class="table-cell">{{ row?.time }}</span>
+        <div class="table-cell">{{ row?.time }}</div>
       </template>
       <template v-else-if="column === 'Group'">
-        <span class="table-cell">{{ row?.group }}</span>
+        <div class="table-cell">{{ row?.group }}</div>
       </template>
       <template v-else-if="column === 'Game'">
-        <span class="table-cell">{{ row?.homeTeam.name }} vs {{ row?.awayTeam.name }}</span>
+        <div class="table-cell">{{ row?.homeTeam.name }} vs {{ row?.awayTeam.name }}</div>
       </template>
       <template v-else>
-        <span class="table-cell">{{ row?.scoreHome }} : {{ row?.scoreAway }}</span>
+        <div class="table-cell">{{ row?.scoreHome }} : {{ row?.scoreAway }}</div>
       </template>
     </template>
   </MatchMateTable>
