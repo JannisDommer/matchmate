@@ -694,8 +694,8 @@ export const twelveTeamsMatches: Match[] = [
         }
       ]
     },
-    "scoreHome": 0,
-    "scoreAway": 0
+    "scoreHome": 1,
+    "scoreAway": 3
   },
   {
     "group": "Group C",
@@ -721,8 +721,8 @@ export const twelveTeamsMatches: Match[] = [
         }
       ]
     },
-    "scoreHome": 0,
-    "scoreAway": 0
+    "scoreHome": 4,
+    "scoreAway": 4
   },
   {
     "group": "Group A",
@@ -751,7 +751,7 @@ export const twelveTeamsMatches: Match[] = [
         }
       ]
     },
-    "scoreHome": 0,
+    "scoreHome": 6,
     "scoreAway": 0
   },
   {
