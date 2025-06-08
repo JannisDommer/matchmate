@@ -832,8 +832,8 @@ export const twelveTeamsMatches: Match[] = [
         }
       ]
     },
-    "scoreHome": 0,
-    "scoreAway": 0
+    "scoreHome": 5,
+    "scoreAway": 1
   },
   {
     "group": "Group B",
