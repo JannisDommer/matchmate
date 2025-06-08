@@ -5,38 +5,38 @@ export const twelveTeams: TournamentDefinition = {
     name: 'Group A', teams: [{
       name: 'WKT TV', participants: [{name: 'Lukser'}, {name: 'Alex Seyfried'}, {name: 'Werle'}],
     }, {
-      name: 'Oggelshausen 1', participants: [{name: ''}, {name: ''}, {name: ''}],
+      name: 'Oggelshausen 1', participants: [{name: 'Holger'}, {name: 'Sma'}, {name: 'Hare'}],
     }, {
-      name: 'GO Ultras', participants: [{name: 'Player A5'}, {name: 'Player A6'}, {name: ''}],
+      name: 'GO Ultras', participants: [{name: 'Nadine'}, {name: 'Niklas'}, {name: 'Jannis'}],
     }, {
-      name: 'Atom', participants: [{name: 'Player A7'}, {name: 'Player A8'}],
+      name: 'Atom', participants: [{name: 'Gio'}, {name: 'Botte'}, {name: 'Stevie'}],
     }, {
-      name: 'Tamelle', participants: [{name: 'Player A7'}, {name: 'Player A8'}],
+      name: 'Tamelle', participants: [{name: 'Tatjana'}, {name: 'Amelie'}, {name: 'Jule'}],
     },],
   }, {
     name: 'Group B', teams: [{
-      name: 'WKT 1', participants: [{name: 'Player B1'}, {name: 'Player B2'}],
+      name: 'WKT 1', participants: [{name: 'Tschabo'}, {name: 'Biba'}, {name: 'Bibo'}],
     }, {
-      name: 'WKT 3', participants: [{name: 'Player B3'}, {name: 'Player B4'}],
+      name: 'WKT 3', participants: [{name: 'Bobbel'}, {name: 'Uwe'}, {name: 'Schu'}],
     }, {
-      name: 'Vaut, RS', participants: [{name: 'Player B5'}, {name: 'Player B6'}],
+      name: 'Vaut, RS', participants: [{name: 'Heiner'}, {name: 'Margit'}, {name: 'Tina'}],
     }, {
-      name: 'Hass Haas', participants: [{name: 'Player B7'}, {name: 'Player B8'}],
+      name: 'Hass Haas', participants: [{name: 'Finch'}, {name: 'Dominik Haas'}, {name: 'Gilfo'}],
     }, {
-      name: 'WKT 4', participants: [{name: 'Player B7'}, {name: 'Player B8'}],
+      name: 'WKT 4', participants: [{name: 'Alex St.'}, {name: 'Piepse'}, {name: "Pete"}],
     }
     ],
   }, {
     name: 'Group C', teams: [{
-      name: 'WKT 2', participants: [{name: 'Player C1'}, {name: 'Player C2'}],
+      name: 'WKT 2', participants: [{name: 'Mo'}, {name: 'Ralfi'}, {name: 'Matze G.'}],
     }, {
-      name: 'Oggelshausen 2', participants: [{name: 'Player C3'}, {name: 'Player C4'}],
+      name: 'Oggelshausen 2', participants: [{name: 'Uli'}, {name: 'Conni'}, {name: 'Bobo'}],
     }, {
-      name: 'WKT Damen', participants: [{name: 'Player C5'}, {name: 'Player C6'}],
+      name: 'WKT Damen', participants: [{name: 'Petra'}, {name: 'Heike'}, {name: 'Olga'}],
     }, {
-      name: 'Schöneburg', participants: [{name: 'Player C7'}, {name: 'Player C8'}],
+      name: 'Schöneburg', participants: [{name: 'Häbbe'}, {name: 'Bätze'}, {name: 'Neno'}],
     }, {
-      name: 'HSV', participants: [{name: 'Player C7'}, {name: 'Player C8'}],
+      name: 'HSV', participants: [{name: 'Fabi'}, {name: 'Kinski'}, {name: 'Fischli'}],
     }],
   },], bracketsAfterGroupPhase: 3,
 }
@@ -72,7 +72,7 @@ export const twelveTeamsMatches: Match[] = [
         }
       ]
     },
-    "scoreHome": 0,
+    "scoreHome": 9,
     "scoreAway": 0
   },
   {
