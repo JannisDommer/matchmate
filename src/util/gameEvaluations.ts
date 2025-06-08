@@ -55,11 +55,11 @@ export function calculateGroupRankings(matches: Match[], groupName: string): Tea
     away.goalsAgainst += match.scoreHome;
     if (match.scoreHome > match.scoreAway) {
       home.won++;
-      home.points += 3;
+      home.points += 2;
       away.lost++;
     } else if (match.scoreHome < match.scoreAway) {
       away.won++;
-      away.points += 3;
+      away.points += 2;
       home.lost++;
     } else {
       home.drawn++;
