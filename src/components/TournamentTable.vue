@@ -25,7 +25,7 @@
 import MatchMateTable from "./MatchMateTable.vue";
 import {computed} from "vue";
 import type {Group, Match} from "@/types/tournamentTypes.ts";
-import {scheduleMatches} from "@/util/dataTransformations.ts";
+import {getGroupPhaseMatches, scheduleMatches} from "@/util/dataTransformations.ts";
 
 const props = defineProps<{
   groups: Group[]
@@ -35,10 +35,21 @@ const props = defineProps<{
 const startDate = new Date(2025, 6,3, 12, 0, 0);
 const matchTimeInMinutes = 15;
 
+function shuffleArray(array) {
+  for (let i = array.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1)); // random index from 0 to i
+    [array[i], array[j]] = [array[j], array[i]]; // swap elements
+  }
+  return array;
+}
+
+
 const defineGames = computed(() => {
   if (!props.groups) {
     return [];
   }
+  const shuffled = shuffleArray([...getGroupPhaseMatches(props.groups)]); // use spread to avoid modifying original
+  console.log(shuffled);
   return scheduleMatches(props.matches, startDate, matchTimeInMinutes);
 })
 
