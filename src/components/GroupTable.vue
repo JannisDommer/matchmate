@@ -5,7 +5,8 @@
     </template>
 
     <template #cell="{ row }">
-      {{row.name}}
+      <span class="group-name">{{row.name}}: </span>
+      <span v-for="participant in row.participants" class="participant-name">{{participant.name}}, </span>
     </template>
   </MatchMateTable>
 </template>
@@ -25,5 +26,13 @@ defineProps<{
   font-weight: bold;
   font-size: 20pt;
   color: #1976d2;
+}
+
+.group-name {
+  font-weight: bold
+}
+
+.participant-name {
+  //margin-left: 5px;
 }
 </style>
