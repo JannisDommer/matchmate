@@ -126,8 +126,8 @@ export const twelveTeamsMatches: Match[] = [
         }
       ]
     },
-    "scoreHome": 0,
-    "scoreAway": 0
+    "scoreHome": 6,
+    "scoreAway": 1
   },
   {
     "group": "Group A",
@@ -159,8 +159,8 @@ export const twelveTeamsMatches: Match[] = [
         }
       ]
     },
-    "scoreHome": 0,
-    "scoreAway": 0
+    "scoreHome": 4,
+    "scoreAway": 1
   },
   {
     "group": "Group B",
@@ -186,8 +186,8 @@ export const twelveTeamsMatches: Match[] = [
         }
       ]
     },
-    "scoreHome": 0,
-    "scoreAway": 0
+    "scoreHome": 2,
+    "scoreAway": 3
   },
   {
     "group": "Group C",
@@ -213,8 +213,8 @@ export const twelveTeamsMatches: Match[] = [
         }
       ]
     },
-    "scoreHome": 0,
-    "scoreAway": 0
+    "scoreHome": 5,
+    "scoreAway": 1
   },
   {
     "group": "Group A",
@@ -243,8 +243,8 @@ export const twelveTeamsMatches: Match[] = [
         }
       ]
     },
-    "scoreHome": 0,
-    "scoreAway": 0
+    "scoreHome": 4,
+    "scoreAway": 1
   },
   {
     "group": "Group B",
@@ -270,8 +270,8 @@ export const twelveTeamsMatches: Match[] = [
         }
       ]
     },
-    "scoreHome": 0,
-    "scoreAway": 0
+    "scoreHome": 4,
+    "scoreAway": 1
   },
   {
     "group": "Group C",
@@ -297,8 +297,8 @@ export const twelveTeamsMatches: Match[] = [
         }
       ]
     },
-    "scoreHome": 0,
-    "scoreAway": 0
+    "scoreHome": 1,
+    "scoreAway": 5
   },
   {
     "group": "Group A",
