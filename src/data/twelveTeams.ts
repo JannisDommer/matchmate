@@ -887,8 +887,8 @@ export const twelveTeamsMatches: Match[] = [
         }
       ]
     },
-    "scoreHome": 0,
-    "scoreAway": 0
+    "scoreHome": 2,
+    "scoreAway": 1
   },
 ]
 
