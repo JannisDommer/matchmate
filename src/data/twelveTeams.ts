@@ -905,32 +905,32 @@ export const twelveTeamsKoTree = [{
 
 
 export const twelveTeamsKoTreeFinals = [[{
-  "team1": "Team A1",
-  "team2": "Team B1",
+  "team1": "WKT 2",
+  "team2": "WKT 1",
   "score1": 0,
   "score2": 0,
   "winner": null,
   "round": 1,
   "matchIndex": 0
 }, {
-  "team1": "Team C1",
-  "team2": "Team A2",
+  "team1": "WKT 3",
+  "team2": "GO Ultras",
   "score1": 0,
   "score2": 0,
   "winner": null,
   "round": 1,
   "matchIndex": 1
 }, {
-  "team1": "Team B2",
-  "team2": "Team C4",
+  "team1": "WKT TV",
+  "team2": "WKT 4",
   "score1": 0,
   "score2": 0,
   "winner": null,
   "round": 1,
   "matchIndex": 2
 }, {
-  "team1": "Team A3",
-  "team2": "Team B4",
+  "team1": "Atom",
+  "team2": "Schöneburg",
   "score1": 0,
   "score2": 0,
   "winner": null,
