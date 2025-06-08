@@ -20,6 +20,5 @@ const matches = twelveTeamsMatches;
   align-items: center;
   justify-content: center;
   min-height: 80vh;
-  margin-left: 10rem;
 }
 </style>

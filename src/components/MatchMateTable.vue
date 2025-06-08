@@ -1,5 +1,5 @@
 <template>
-  <div class="rounded border border-gray-300">
+  <div class="rounded border border-gray-300" style="margin: auto">
     <table class="min-w-full text-left text-sm">
       <thead class="bg-gray-100 text-gray-700">
       <tr>
